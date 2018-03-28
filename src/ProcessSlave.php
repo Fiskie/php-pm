@@ -331,9 +331,6 @@ class ProcessSlave
             $this->doConnect();
         } catch (\RuntimeException $ex) {
             // Failed to connect to the controller, there was probably a timeout accessing the socket...
-            // Unfortunately we can't specify the socket timeout so we'll do this for now.
-            error_log("Worker {$this->config['port']} was unable to connect to the socket (busy?) retrying.");
-
             $this->loop->addTimer(1, function () {
                 $this->tryConnect();
             });
