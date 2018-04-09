@@ -1035,7 +1035,7 @@ if (!pcntl_enabled()) {
     error_log(
         sprintf(
             'PCNTL is not enabled in PHP installation at %s. See: http://php.net/manual/en/pcntl.installation.php',
-            PHP_BINARY,
+            PHP_BINARY
         )
     );
     exit();
